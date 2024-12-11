@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "jl90cyMJ0fPKiB9ET7G+hSQzvTZXOFVHMSI7wSSNa/s=",
+  "Source": "ClinicAppointmentApi",
+  "BasePath": "_content/ClinicAppointmentApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
