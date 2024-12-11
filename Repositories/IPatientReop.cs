@@ -5,8 +5,8 @@ namespace ClinicAppointmentApi.Repositories
 {
     public interface IPatientRepo
     {
-        int Add(Patient patient);
-        IEnumerable<Patient> GetAll();
-        Patient GetById(int id);
+        int Addpatient(Patient patient);
+        IEnumerable<Patient> GetAllPatient();
+        Patient GetpatientById(int id);
     }
 }

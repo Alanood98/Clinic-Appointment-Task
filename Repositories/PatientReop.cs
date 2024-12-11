@@ -6,19 +6,21 @@ namespace ClinicAppointmentApi.Repositories
     {
         private readonly ApplicationDbContext _context;
 
+        // The ApplicationDbContext is injected via Dependency Injection
+
         public PatientRepo(ApplicationDbContext context)
         {
             _context = context;
         }
 
         // Get all patients
-        public IEnumerable<Patient> GetAll()
+        public IEnumerable<Patient> GetAllPatient()
         {
             return _context.Patients.ToList();
         }
 
         // Get a patient by ID
-        public Patient GetById(int id)
+        public Patient GetpatientById(int id)
         {
             try
             {
@@ -33,7 +35,7 @@ namespace ClinicAppointmentApi.Repositories
         }
 
         // Add a new patient
-        public int Add(Patient patient)
+        public int Addpatient(Patient patient)
         {
             try
             {
@@ -43,9 +45,9 @@ namespace ClinicAppointmentApi.Repositories
             }
             catch (Exception ex)
             {
-                // Log the exception
+               
                 Console.WriteLine($"Error adding new patient: {ex.Message}");
-                throw; // Rethrow the exception if necessary
+                throw; 
             }
         }
     }

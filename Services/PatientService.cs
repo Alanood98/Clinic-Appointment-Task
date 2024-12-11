@@ -21,7 +21,7 @@ namespace ClinicAppointmentApi.Services
         // Retrieves a list of all patients from the repository
         public List<Patient> GetAllPatients()
         {
-            var patient = _patientRepo.GetAll()
+            var patient = _patientRepo.GetAllPatient()
                 .OrderBy(p => p.PName)          //The patients are sorted alphabetically by their name(PName).
                 .ToList();
             if (patient == null || patient.Count == 0)
@@ -34,7 +34,7 @@ namespace ClinicAppointmentApi.Services
         //Get all patients from the repository by there ID:
         public Patient GetPatientById(int id)
         {
-            var patient = _patientRepo.GetById(id);
+            var patient = _patientRepo.GetpatientById(id);
             if (patient == null)
             {
                 throw new KeyNotFoundException("patient not found.");
@@ -56,7 +56,7 @@ namespace ClinicAppointmentApi.Services
             {
                 throw new ArgumentException("Invalid gender. Gender must be Male or Female.");
             }
-            _patientRepo.Add(patient);
+            _patientRepo.Addpatient(patient);
 
             return patient.PId;
 
