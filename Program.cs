@@ -1,9 +1,12 @@
 using ClinicAppointmentApi;
-using HospitalApi;
+using ClinicAppointmentApi.Repositories;
+using ClinicAppointmentApi.Services;
+
+
 using Microsoft.EntityFrameworkCore;
 
 
-namespace WebApplication4
+namespace ClinicAppointmentApi
 {
     public class Program
     {
@@ -15,8 +18,16 @@ namespace WebApplication4
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+            // Register repositories and services
+            builder.Services.AddScoped<IPatientRepo, PatientRepo>();
+            builder.Services.AddScoped<IPatientServices, PatientService>();
+
+            // Add controllers
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+
+            // Add Swagger/OpenAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

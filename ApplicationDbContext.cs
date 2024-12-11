@@ -2,7 +2,7 @@
 
 using ClinicAppointmentApi.Models;
 
-namespace HospitalApi
+namespace ClinicAppointmentApi
 {
     public class ApplicationDbContext : DbContext
     {
