@@ -24,10 +24,11 @@ namespace ClinicAppointmentApi
             builder.Services.AddScoped<IPatientServices, PatientService>();
             builder.Services.AddScoped<IClinicReop, ClinicRepo>();
             builder.Services.AddScoped<IClinicService, ClinicService>();
+            builder.Services.AddScoped<IBookingRepo, BookingRepo>();
+            builder.Services.AddScoped<IBookingService, BookingService>();
 
             // Add controllers
             builder.Services.AddControllers();
-
 
             // Add Swagger/OpenAPI
             builder.Services.AddEndpointsApiExplorer();
@@ -43,10 +44,7 @@ namespace ClinicAppointmentApi
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();
