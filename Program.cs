@@ -22,6 +22,8 @@ namespace ClinicAppointmentApi
             // Register repositories and services
             builder.Services.AddScoped<IPatientRepo, PatientRepo>();
             builder.Services.AddScoped<IPatientServices, PatientService>();
+            builder.Services.AddScoped<IClinicReop, ClinicRepo>();
+            builder.Services.AddScoped<IClinicService, ClinicService>();
 
             // Add controllers
             builder.Services.AddControllers();
